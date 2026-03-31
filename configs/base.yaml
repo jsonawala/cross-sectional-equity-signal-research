@@ -1,0 +1,55 @@
+# ─────────────────────────────────────────
+# Universe
+# ─────────────────────────────────────────
+tickers:
+  - SPY
+  - QQQ
+  - IWM
+  - EFA
+  - EEM
+  - TLT
+  - HYG
+  - GLD
+
+start_date: "2010-01-01"
+end_date: "2024-01-01"
+
+# ─────────────────────────────────────────
+# Return Construction
+# ─────────────────────────────────────────
+fwd_return_days: 5          # how many days ahead to predict
+
+# ─────────────────────────────────────────
+# Feature Engineering
+# ─────────────────────────────────────────
+momentum_windows: [20, 60]  # lookback days for momentum features
+volatility_window: 20       # lookback days for volatility feature
+
+# ─────────────────────────────────────────
+# Walk-Forward Validation
+# ─────────────────────────────────────────
+train_years: 2              # length of each training window
+test_months: 3              # length of each test window
+step_months: 3              # how far to roll forward each iteration
+
+# ─────────────────────────────────────────
+# Model
+# ─────────────────────────────────────────
+ridge_alpha: 1.0            # regularization strength (higher = more regularized)
+
+# ─────────────────────────────────────────
+# Portfolio Construction
+# ─────────────────────────────────────────
+top_quantile: 0.20          # top 20% = long
+bottom_quantile: 0.20       # bottom 20% = short (set to 0 for long-only)
+
+# ─────────────────────────────────────────
+# Transaction Costs
+# ─────────────────────────────────────────
+cost_bps_levels: [5, 10, 20, 50]   # basis points to test
+default_cost_bps: 10               # used for primary results
+
+# ─────────────────────────────────────────
+# Robustness Testing
+# ─────────────────────────────────────────
+robustness_fwd_days: [1, 5, 20]    # alternative forward return horizons

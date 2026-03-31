@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/xsec_alpha/__init__.py
+src/xsec_alpha.egg-info/PKG-INFO
+src/xsec_alpha.egg-info/SOURCES.txt
+src/xsec_alpha.egg-info/dependency_links.txt
+src/xsec_alpha.egg-info/top_level.txt
+src/xsec_alpha/data/__init__.py
+src/xsec_alpha/data/datasource.py
+src/xsec_alpha/data/smoke_test.py
